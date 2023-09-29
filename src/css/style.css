@@ -1,0 +1,98 @@
+body {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+
+main .personagem {
+    display: none; /*aqui eu fiz todas as imagens sumir*/
+    height: 100vh; /*(vh) é o tamanho do dispositivo do pc ou celular*/
+}
+main .personagem.selecionado {
+    display: block; /*aqui eu fiz somente a imagem do lyffy(principal) aparecer*/
+}
+
+main .personagem .imagem {
+    width: 100%; /*altura*/
+    height: 100%; /*largura*/
+    /*estou corrigindo o tamanho das imagens de acordo com o tamanho da tela do navegador*/
+    object-fit: cover; /*isso faz com que a imagem não fique distocida,mantendo as dismesões da imagens*/
+}
+.conteudo {
+    position: absolute; /*aqui estou alterando a posição da classe .conteudo e deixando em cima de todas as informações*/
+    top: 0; /*aqui estou mudando a posição do .conteudo e deixando no top da tela*/
+    left: 120px; /*aqui eu afastei (movi) 120px para direita o .conteudo */
+
+    display: flex; 
+    flex-direction: column;
+    /*aqui estou deixando os elementos do .conteudo em colunas como titulo e paragrafos*/
+    justify-content: center; /* isso serve para alinhar o .conteudo no centro*/
+    min-height: 100vh; /*aqui estou fazendo que o elementos do conteudo tenha o tamanho da tela do dispositivo*/
+    max-width: 380px; /*aqui estou ajustando a largura do elemento .conteudo*/
+    z-index: 1; /*esse é o eixo z para poder ficar como prioridade e ficar em cima dos outro elementos*/
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff; /*estou alterando a cor da fonte*/
+    font-size: 48px; /*estou alterando o tamanho da fonte*/
+    font-family: "secular one";/*estou alterando a fonte*/
+    font-weight: 400; /*aqui estou alterando o peso da fonte*/
+    margin-bottom: 20px; /*estou colocando um espasamento entre os elementos somente embaixo*/
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "rubik";
+    font-size: 16px;
+    line-height: 24px; /*estou dando uma separação entre as linhas*/
+}
+
+.conteudo .logo{
+    background-image: url("../imagens/one-piece-logo.png"); /*aqui estou carregando a imagem do logo a partir de um endereço(precisa ter "../" no caso voltando uma pasta antes*/
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px ;    
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /*estou dando expasamento entre os botoes*/
+    background-color: rgba(0, 0, 0, 0.3) ;
+}
+
+.botoes .botao{
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9;
+
+}
